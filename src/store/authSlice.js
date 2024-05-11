@@ -5,23 +5,21 @@ const initialState = {
   userData: null,
 };
 
-const authSclice = createSlice({
+const authSlice = createSlice({
   name: "auth",
   initialState,
-
   reducers: {
     login: (state, action) => {
       state.status = true;
       state.userData = action.payload.userData;
     },
-
-    logout: (state, action) => {
+    logout: (state) => {
       state.status = false;
       state.userData = null;
     },
   },
 });
 
-export const { login, logout } = authSclice.actions;
+export const { login, logout } = authSlice.actions;
 
-export default authSclice.reducer;
+export default authSlice.reducer;
