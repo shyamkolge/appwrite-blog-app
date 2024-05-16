@@ -8,9 +8,11 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import { Header, Footer } from "./conponents";
 import { Outlet } from "react-router-dom";
+import { Input } from "./conponents/index";
+import { HelpOutline, Label } from "@mui/icons-material";
 
 export function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -34,7 +36,8 @@ export function App() {
       <div className="w-full block">
         <Header />
         <main>
-        TODO  {/* <Outlet /> */}
+          TODO {/* <Outlet /> */}
+          <Input />
         </main>
         <Footer />
       </div>
