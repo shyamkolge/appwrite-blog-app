@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import React, { useId,forwardRef } from "react";
 
 const Select = (
   {
@@ -32,4 +32,4 @@ duration—200 border ${className}`}
     </div>
   );
 };
-export default Select;
+export default forwardRef(Select);
