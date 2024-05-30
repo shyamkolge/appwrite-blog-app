@@ -5,6 +5,7 @@ import Logo from "./Header/utils/Logo";
 import LogoutBtn from "./Header/utils/LogoutBtn";
 import Button  from "./Button";
 import Input from "./Input";
+import PostCard from './PostCard'
 
 
-export { Header, Footer, Container, Logo, LogoutBtn, Button, Input };
+export { Header, Footer, Container, Logo, LogoutBtn, Button, Input, PostCard };
