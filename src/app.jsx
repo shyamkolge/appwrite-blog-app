@@ -35,11 +35,7 @@ export function App() {
       <div className="w-full block">
         <Header />
         <main>
-          TODO {/* <Outlet /> */}
-          {/* <Input /> */}
-
-          <Login/>
-
+          <Outlet />
         </main>
         <Footer />
       </div>

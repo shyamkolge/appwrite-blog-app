@@ -23,7 +23,6 @@ const Login = () => {
                 const userData = authService.getCurrentUser()
 
                 if (userData) dispatch(authLogin(userData))
-                TODO 
                 navigate("/");
             }
             
@@ -48,7 +47,7 @@ const Login = () => {
         <p className='mt-2 text-center text-base text-black/60'>
             Don&apos;t have any account?&nbsp;
             <Link 
-               to="/signup"
+               to="/sign-up"
                className='font-medium text-primary transition-all duration-200 hover:underline'>
                Sign Up
             </Link>
@@ -79,10 +78,7 @@ const Login = () => {
               type = 'password'
               name = 'password'
               {...register('password' , {
-                   required : true,
-                   validate : {
-                       matchPatern : (value) =>  /^((?=.*[\d])(?=.*[a-z])(?=.*[A-Z])|(?=.*[a-z])(?=.*[A-Z])(?=.*[^\w\d\s])|(?=.*[\d])(?=.*[A-Z])(?=.*[^\w\d\s])|(?=.*[\d])(?=.*[a-z])(?=.*[^\w\d\s])).{7,30}$/.test(value) || 'Enter a valid password'
-                   }
+                   required : true
               })}
            />
 

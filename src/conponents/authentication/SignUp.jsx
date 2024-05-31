@@ -35,8 +35,70 @@ const SignUp = () => {
               </span>
             </div>
 
+            <h2 className='text-center  text-2xl font-bold leading-tight'>Create a new account </h2>
+
+            <p className='mt-2 text-center text-base text-black/60'>
+                 Have a account?&nbsp;
+                  <Link 
+                    to="/login"
+                    className='font-medium text-primary transition-all duration-200 hover:underline'>
+                        Login
+                  </Link>
+            </p>
+            { error && <p className='text-red-600 mt-8 text-center'>{error}</p>}
 
 
+            <form onSubmit={handleSubmit(signUp)} className='mt-8'>
+                
+                <div className='space-y-5'>
+
+                <Input 
+                      label = "Name : "
+                      placeholder ="Enter your name "
+                      type = 'text'
+                      name = "name"
+                      {...register('name', {
+                          required : true,   
+                      })}/>
+
+                <Input 
+                      label = 'Email : '
+                      placeholder = "Enter your email"
+                      type = "email"
+                      name = "email"
+                      {...register("email", {
+                              required : true,
+                              validate : { 
+                                  matchPatern: (value) => 
+                                            /^(?:(?:[\w`~!#$%^&*\-=+;:{}'|,?\/]+(?:(?:\.(?:"(?:\\?[\w`~!#$%^&*\-=+;:{}'|,?\/\.()<>\[\] @]|\\"|\\\\)*"|[\w`~!#$%^&*\-=+;:{}'|,?\/]+))*\.[\w`~!#$%^&*\-=+;:{}'|,?\/]+)?)|(?:"(?:\\?[\w`~!#$%^&*\-=+;:{}'|,?\/\.()<>\[\] @]|\\"|\\\\)+"))@(?:[a-zA-Z\d\-]+(?:\.[a-zA-Z\d\-]+)*|\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\])$/.test(value) || "Email adress must be valid adress",
+                                  }
+                      })}
+                    />
+                    
+                    <Input
+                         label = "Password : "
+                         placeholder = "Enter your password"
+                         type = 'password'
+                         name = 'password'
+                         {...register('password' , {
+                           required : true,
+                           validate : {
+                                  matchPatern : (value) =>  /^((?=.*[\d])(?=.*[a-z])(?=.*[A-Z])|(?=.*[a-z])(?=.*[A-Z])(?=.*[^\w\d\s])|(?=.*[\d])(?=.*[A-Z])(?=.*[^\w\d\s])|(?=.*[\d])(?=.*[a-z])(?=.*[^\w\d\s])).{7,30}$/.test(value) || 'Enter a valid password'
+                           }
+                        })}
+                      />
+                 
+
+                  
+                     <Button
+                      type='submit'
+                      className='w-full'
+                     >
+                       Sign In
+                    </Button>
+                </div>
+
+            </form>
         </div>
   
       </div>
