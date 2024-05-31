@@ -6,10 +6,9 @@ import { useEffect, useState } from "preact/hooks";
 import authService from "./appwrite/auth";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
-import { Header, Footer } from "./conponents";
+import { Header, Footer , Login} from "./conponents";
 import { Outlet } from "react-router-dom";
 import { Input } from "./conponents/index";
-import { HelpOutline, Label } from "@mui/icons-material";
 
 export function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +36,10 @@ export function App() {
         <Header />
         <main>
           TODO {/* <Outlet /> */}
-          <Input />
+          {/* <Input /> */}
+
+          <Login/>
+
         </main>
         <Footer />
       </div>
