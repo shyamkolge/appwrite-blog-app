@@ -9,14 +9,20 @@ import { login } from '../../store/authSlice'
 const SignUp = () => {
   
      const { register , handleSubmit} = useForm();
-
      const [error, setError] = useState("");
+     
+     const navigate = useNavigate()
+     const dispatch = useDispatch()
 
-     const signUp = (data) =>{
-        
+     const createAccount = async (data) => {
         setError("")
 
         try {
+          const userData = await authService.createAccount(data);
+
+          if(userData){
+                dispatch(login(userData))
+          }
                
         } catch (error) {
             setError(error.message);
@@ -48,7 +54,7 @@ const SignUp = () => {
             { error && <p className='text-red-600 mt-8 text-center'>{error}</p>}
 
 
-            <form onSubmit={handleSubmit(signUp)} className='mt-8'>
+            <form onSubmit={handleSubmit(createAccount)} className='mt-8'>
                 
                 <div className='space-y-5'>
 
