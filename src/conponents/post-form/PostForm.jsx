@@ -25,6 +25,21 @@ const PostForm = ({ post }) => {
           
         const file = await data.image[0] ? appWriteService.uplaodFile(data.image[0]) : null; 
 
+        if (file) {
+            appWriteService.deleteFile(post.featuredImage);
+        }
+
+        const updatePost = await appWriteService.updatePost(
+            post.$id, 
+            {
+               ... data,
+               featuredImage : file ? file.$id : post.featuredImage
+            })   
+
+          if (updatePost) {
+            navigate(`/post/${updatePost.$id}`)
+          }
+
 
 
 
