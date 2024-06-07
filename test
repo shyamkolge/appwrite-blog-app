@@ -1,0 +1,2 @@
+INSERT INTO Users (UserName, Password)
+VALUES ("admint" , "admin@2005");
