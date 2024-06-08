@@ -10,6 +10,9 @@ import Login from "./authentication/Login";
 import SignUp from "./authentication/SignUp";
 import CustomEditor from "./customContainers/CustomEditor";
 import Select  from "./customContainers/Select";
+import Signup from "../pages/SIgnup";
+import Login from "../pages/Login";
+import PostForm from './post-form/PostForm'
 
 export {
   Header,
@@ -23,5 +26,8 @@ export {
   Login,
   SignUp,
   CustomEditor,
-  Select
+  Select,
+  PostForm,
+  Signup,
+  Login
 };

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import appWriteService from "../../appwrite/config";
 import { useForm } from "react-hook-form";
-import { Button, Input, Select } from "../index";
+import { Button, CustomEditor, Input, Select } from "../index";
 
 const PostForm = ({ post }) => {
   const { register, handleSubmit, watch, setValue, control, getValues } =
@@ -102,7 +102,7 @@ const PostForm = ({ post }) => {
             });
           }}
         />
-        <RTE
+        <CustomEditor
           label="Content :"
           name="content"
           control={control}
